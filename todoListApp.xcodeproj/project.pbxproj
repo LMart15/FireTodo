@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		5510B3201E4177C700C56CE4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510B31F1E4177C700C56CE4 /* AppDelegate.swift */; };
-		5510B3221E4177C700C56CE4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510B3211E4177C700C56CE4 /* ViewController.swift */; };
+		5510B3221E4177C700C56CE4 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510B3211E4177C700C56CE4 /* TaskViewController.swift */; };
 		5510B3251E4177C700C56CE4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5510B3231E4177C700C56CE4 /* Main.storyboard */; };
 		5510B3271E4177C700C56CE4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5510B3261E4177C700C56CE4 /* Assets.xcassets */; };
 		5510B32A1E4177C700C56CE4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5510B3281E4177C700C56CE4 /* LaunchScreen.storyboard */; };
+		5510B3361E4178A800C56CE4 /* TaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510B3351E4178A800C56CE4 /* TaskCell.swift */; };
+		5510B3381E4178B400C56CE4 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5510B3371E4178B400C56CE4 /* Task.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		5510B31C1E4177C700C56CE4 /* todoListApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = todoListApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5510B31F1E4177C700C56CE4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		5510B3211E4177C700C56CE4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5510B3211E4177C700C56CE4 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
 		5510B3241E4177C700C56CE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5510B3261E4177C700C56CE4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5510B3291E4177C700C56CE4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5510B32B1E4177C700C56CE4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5510B3351E4178A800C56CE4 /* TaskCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskCell.swift; sourceTree = "<group>"; };
+		5510B3371E4178B400C56CE4 /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +59,23 @@
 			isa = PBXGroup;
 			children = (
 				5510B31F1E4177C700C56CE4 /* AppDelegate.swift */,
-				5510B3211E4177C700C56CE4 /* ViewController.swift */,
 				5510B3231E4177C700C56CE4 /* Main.storyboard */,
+				5510B3211E4177C700C56CE4 /* TaskViewController.swift */,
+				5510B3391E41861900C56CE4 /* Model */,
 				5510B3261E4177C700C56CE4 /* Assets.xcassets */,
 				5510B3281E4177C700C56CE4 /* LaunchScreen.storyboard */,
 				5510B32B1E4177C700C56CE4 /* Info.plist */,
 			);
 			path = todoListApp;
+			sourceTree = "<group>";
+		};
+		5510B3391E41861900C56CE4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5510B3351E4178A800C56CE4 /* TaskCell.swift */,
+				5510B3371E4178B400C56CE4 /* Task.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,7 +151,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5510B3221E4177C700C56CE4 /* ViewController.swift in Sources */,
+				5510B3381E4178B400C56CE4 /* Task.swift in Sources */,
+				5510B3221E4177C700C56CE4 /* TaskViewController.swift in Sources */,
+				5510B3361E4178A800C56CE4 /* TaskCell.swift in Sources */,
 				5510B3201E4177C700C56CE4 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
