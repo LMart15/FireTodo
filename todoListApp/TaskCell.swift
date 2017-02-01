@@ -25,11 +25,12 @@ class TaskCell: UITableViewCell {
     
     func greyOutLabel(){
         
+        let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: name_label.text!)
+        
         if (completedSwitch_outlet.isOn) {
             name_label.textColor = UIColor.black
             name_label.font = UIFont(name:"HelveticaNeue-Bold", size: 20.0)
             
-            let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: name_label.text!)
             attributeString.removeAttribute(NSStrikethroughStyleAttributeName, range: NSMakeRange(0, attributeString.length))
             
             
@@ -39,7 +40,6 @@ class TaskCell: UITableViewCell {
         else{
             name_label.textColor = UIColor.lightGray
             
-            let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: name_label.text!)
             attributeString.addAttribute(NSStrikethroughStyleAttributeName, value: 2, range: NSMakeRange(0, attributeString.length))
             
             
