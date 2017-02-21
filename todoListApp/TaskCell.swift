@@ -54,11 +54,11 @@ class TaskCell: UITableViewCell {
         
     }
     
-    func configureCell(name: String, completed: Bool, notes: String){
+    func configureCell(name: String, completed: Bool, note: String){
     
         name_label.text = name
         completedSwitch_outlet.isOn = !completed
-        notes_label.text = notes
+        notes_label.text = note
         
         //Init with label greyed out if value is completed
         greyOutLabel()

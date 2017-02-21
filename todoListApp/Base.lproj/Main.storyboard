@@ -111,6 +111,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Task List" id="nl0-q1-aFI"/>
+                    <connections>
+                        <outlet property="tableView" destination="eAm-kT-loZ" id="SFZ-Hu-N55"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
