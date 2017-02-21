@@ -77,9 +77,51 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         else {
             return TaskCell()
         }
-        
-        
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        print("prepareForSegue called")
+        
+        var selectedTask:Task
+
+        
+        if segue.identifier == "taskDetailSegue" {
+            let taskDetail =  segue.destination as! TaskDetailViewController
+      
+            // Pass the selected object to the new view controller.
+            if let indexPath = self.tableView.indexPathForSelectedRow {
+                
+                selectedTask = self.allTasks[indexPath.row]
+                
+                taskDetail.currentTask = selectedTask
+                taskDetail.currentIndex = indexPath.row
+                
+            }
+        }
+    }
+    
+//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+//        
+//        print("prepareForSegue called")
+//        
+//        var task:Task?
+//        
+//        if segue.identifier == "taskDetailSegue" {
+//            let taskDetail =  segue.destination as! TaskDetailViewController
+//            
+//            // Pass the selected object to the new view controller.
+//            if let indexPath = self.tableView.indexPathForSelectedRow {
+//                
+//                task = self.allTasks[indexPath.row]
+//            
+//                let selectedTask = task
+//                taskDetail.currentTask = selectedTask
+//                taskDetail.currentIndex = indexPath.row
+//                
+//            }
+//        }
+//    }
 
 
 }
