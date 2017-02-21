@@ -12,6 +12,7 @@ import FirebaseDatabase
 class TaskViewController: UIViewController, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    
     var dbRef:FIRDatabaseReference!
     var allTasks = [Task]()
     
@@ -55,6 +56,33 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         
     }
     
+
+    @IBAction func statusSwitch(_ sender: UISwitch) {
+        
+        var selectedTask:Task
+        
+        let point = CGPoint(x: 0, y: 0)
+        let buttonPosition = sender.convert(point, to: self.tableView)
+        var indexPath = self.tableView.indexPathForRow(at: buttonPosition)!
+            
+        selectedTask = self.allTasks[indexPath.row]
+        
+        if sender.isOn{
+            dbRef.child(selectedTask.key).updateChildValues(["completed" : "true"])
+            sender.setOn(false, animated: true)
+        }
+        else{
+            dbRef.child(selectedTask.key).updateChildValues(["completed" : "false"])
+            sender.setOn(true, animated: true)
+        }
+        
+        //self.tableView.reloadData()
+        
+        //dbRef.child(selectedTask.key).updateChildValues(["completed" : String(sender.isOn)])
+        
+        
+        
+    }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1

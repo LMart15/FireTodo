@@ -64,6 +64,7 @@
                                                     <rect key="frame" x="250" y="28" width="51" height="31"/>
                                                     <connections>
                                                         <action selector="completedSwitch:" destination="EkZ-Rf-y7I" eventType="valueChanged" id="jOz-C6-al8"/>
+                                                        <action selector="statusSwitch:" destination="BYZ-38-t0r" eventType="valueChanged" id="8nD-wj-Baq"/>
                                                     </connections>
                                                 </switch>
                                             </subviews>
@@ -121,21 +122,54 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cD-hT-j1C">
-                                <rect key="frame" x="166" y="180" width="42" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cD-hT-j1C">
+                                <rect key="frame" x="16" y="105" width="50" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notes:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BSh-AK-bYL">
+                                <rect key="frame" x="16" y="232" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bbY-31-lni">
+                                <rect key="frame" x="16" y="134" width="343" height="77"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="77" id="qu0-hS-RZK"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="npx-dx-4Tv">
+                                <rect key="frame" x="16" y="261" width="343" height="300"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="1cD-hT-j1C" firstAttribute="top" secondItem="1YO-En-WVl" secondAttribute="bottom" constant="116" id="DwR-ti-0A4"/>
-                            <constraint firstItem="1cD-hT-j1C" firstAttribute="centerX" secondItem="CAc-uJ-yyN" secondAttribute="centerX" id="I9C-73-ymh"/>
+                            <constraint firstItem="1cD-hT-j1C" firstAttribute="leading" secondItem="bbY-31-lni" secondAttribute="leading" id="FOh-RO-gye"/>
+                            <constraint firstItem="BSh-AK-bYL" firstAttribute="top" secondItem="bbY-31-lni" secondAttribute="bottom" constant="21" id="KkK-bS-vub"/>
+                            <constraint firstItem="1cD-hT-j1C" firstAttribute="top" secondItem="1YO-En-WVl" secondAttribute="bottom" constant="41" id="MKT-wm-sxX"/>
+                            <constraint firstItem="bbY-31-lni" firstAttribute="top" secondItem="1cD-hT-j1C" secondAttribute="bottom" constant="8" symbolic="YES" id="MWd-bf-wgs"/>
+                            <constraint firstItem="bbY-31-lni" firstAttribute="trailing" secondItem="npx-dx-4Tv" secondAttribute="trailing" id="Sjy-4o-qB3"/>
+                            <constraint firstItem="xQG-LZ-D3P" firstAttribute="top" secondItem="npx-dx-4Tv" secondAttribute="bottom" constant="106" id="VkI-Bj-GPB"/>
+                            <constraint firstItem="BSh-AK-bYL" firstAttribute="leading" secondItem="npx-dx-4Tv" secondAttribute="leading" id="VoB-uW-iOV"/>
+                            <constraint firstItem="1cD-hT-j1C" firstAttribute="leading" secondItem="CAc-uJ-yyN" secondAttribute="leadingMargin" id="ZkY-Ek-TEz"/>
+                            <constraint firstItem="bbY-31-lni" firstAttribute="leading" secondItem="BSh-AK-bYL" secondAttribute="leading" id="cdp-xB-7cp"/>
+                            <constraint firstItem="bbY-31-lni" firstAttribute="trailing" secondItem="CAc-uJ-yyN" secondAttribute="trailingMargin" id="cxb-RQ-7La"/>
+                            <constraint firstItem="npx-dx-4Tv" firstAttribute="top" secondItem="BSh-AK-bYL" secondAttribute="bottom" constant="8" symbolic="YES" id="yy0-Rr-BWP"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="taskName_lbl" destination="1cD-hT-j1C" id="LhN-dR-Y04"/>
+                        <outlet property="name_tv" destination="bbY-31-lni" id="64G-RZ-F1P"/>
+                        <outlet property="notes_tv" destination="npx-dx-4Tv" id="S1f-SG-KZa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bAf-cY-G4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
