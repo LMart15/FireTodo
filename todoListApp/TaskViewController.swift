@@ -75,13 +75,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
             dbRef.child(selectedTask.key).updateChildValues(["completed" : "false"])
             sender.setOn(true, animated: true)
         }
-        
-        //self.tableView.reloadData()
-        
-        //dbRef.child(selectedTask.key).updateChildValues(["completed" : String(sender.isOn)])
-        
-        
-        
+  
     }
 
     func numberOfSections(in tableView: UITableView) -> Int {
