@@ -1,10 +1,21 @@
-//
-//  ViewController.swift
-//  todoListApp
-//
-//  Created by Lawrence Martin on 2017-01-31.
-//  Copyright © 2017 mapd.centennial. All rights reserved.
-//
+/*:
+ 
+ - File Name:
+ TaskViewController.swift
+ 
+ - Author:
+ Lawrence Martin
+ 
+ - App Name:
+ TaskFire
+ 
+ - Student ID:
+ 300782358
+ 
+ - File Description:
+ Main task list controller
+ 
+ */
 
 import UIKit
 import FirebaseDatabase
@@ -16,25 +27,15 @@ class TaskViewController: UIViewController, UITableViewDataSource {
     var dbRef:FIRDatabaseReference!
     var allTasks = [Task]()
     
-    let task1 = Task(name: "Dry Cleaning", completed: false, note: "Pick up before friday")
-    let task2 = Task(name: "Grocery Shopping", completed: false, note: "There's nothing to eat in the house")
-    let task3 = Task(name: "Lab 3", completed: true, note: "iOS lab due before end of class")
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dbRef = FIRDatabase.database().reference().child("tasks-data")
         self.startObservingDB()
-        
-        //        Added some tasks manually
-        //        let taskRef = self.dbRef.childByAutoId()
-        //
-        //        //set task data in firebase
-        //        taskRef.setValue(task3.toDictionary())
     }
     
     
-    //observe DB function to see changes in location value
+    ///observe DB function to see changes in location value
     func startObservingDB() {
         
         dbRef.observe(.value, with: { (snapshot:FIRDataSnapshot) in
@@ -55,7 +56,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         
     }
     
-
+    ///Update status in Firebase based on switch
     @IBAction func statusSwitch(_ sender: UISwitch) {
         
         var selectedTask:Task
@@ -63,7 +64,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         let point = CGPoint(x: 0, y: 0)
         let buttonPosition = sender.convert(point, to: self.tableView)
         var indexPath = self.tableView.indexPathForRow(at: buttonPosition)!
-            
+        
         selectedTask = self.allTasks[indexPath.row]
         
         if sender.isOn{
@@ -74,9 +75,9 @@ class TaskViewController: UIViewController, UITableViewDataSource {
             dbRef.child(selectedTask.key).updateChildValues(["completed" : "false"])
             sender.setOn(true, animated: true)
         }
-  
+        
     }
-
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -88,7 +89,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell =
             tableView.dequeueReusableCell(withIdentifier: "taskCellIdentifier", for: indexPath) as? TaskCell{
-        
+            
             cell.configureCell(name: allTasks[indexPath.row].name!,
                                completed: allTasks[indexPath.row].completed!,
                                note: allTasks[indexPath.row].note!)
@@ -99,17 +100,15 @@ class TaskViewController: UIViewController, UITableViewDataSource {
             return TaskCell()
         }
     }
-    
+ 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        print("prepareForSegue called")
-        
+   
         var selectedTask:Task
-
+        
         
         if segue.identifier == "editTaskDetailSegue" {
             let taskDetail =  segue.destination as! TaskDetailViewController
-      
+            
             // Pass the selected object to the new view controller.
             if let indexPath = self.tableView.indexPathForSelectedRow {
                 
@@ -122,28 +121,5 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         }
     }
     
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        
-//        print("prepareForSegue called")
-//        
-//        var task:Task?
-//        
-//        if segue.identifier == "taskDetailSegue" {
-//            let taskDetail =  segue.destination as! TaskDetailViewController
-//            
-//            // Pass the selected object to the new view controller.
-//            if let indexPath = self.tableView.indexPathForSelectedRow {
-//                
-//                task = self.allTasks[indexPath.row]
-//            
-//                let selectedTask = task
-//                taskDetail.currentTask = selectedTask
-//                taskDetail.currentIndex = indexPath.row
-//                
-//            }
-//        }
-//    }
-
-
 }
 

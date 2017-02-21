@@ -1,28 +1,41 @@
-//
-//  TaskCell.swift
-//  todoListApp
-//
-//  Created by Lawrence Martin on 2017-01-31.
-//  Copyright © 2017 mapd.centennial. All rights reserved.
-//
+/*:
+ 
+ - File Name:
+ TaskCell.swift
+ 
+ - Author:
+ Lawrence Martin
+ 
+ - App Name:
+ TaskFire
+ 
+ - Student ID:
+ 300782358
+ 
+ - File Description:
+Custom cell for tasks
+ 
+ */
+
 
 import UIKit
 
 class TaskCell: UITableViewCell {
 
-    
+    // Custom Task cell consists of Name, Note labels and Completed status switch
     @IBOutlet weak var name_label: UILabel!
     @IBOutlet weak var notes_label: UILabel!
     @IBOutlet weak var completedSwitch_outlet: UISwitch!
     
     
- 
+    /// Switch action
     @IBAction func completedSwitch(_ sender: UISwitch) {
         
         greyOutLabel()
         
     }
     
+    /// "Grey out" label if task is marked complete
     func greyOutLabel(){
         
         let attributeString: NSMutableAttributedString =  NSMutableAttributedString(string: name_label.text!)
@@ -47,13 +60,8 @@ class TaskCell: UITableViewCell {
         }
         
     }
- 
-    
-    @IBAction func edit_button(_ sender: UIButton) {
-        
-        
-    }
-    
+
+    ///  Configure or instantiate custom cell
     func configureCell(name: String, completed: Bool, note: String){
     
         name_label.text = name

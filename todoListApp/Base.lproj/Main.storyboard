@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Task List-->
+        <!--TaskFire-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="TaskViewController" customModule="todoListApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -101,7 +101,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="eAm-kT-loZ" secondAttribute="bottom" id="utn-mG-A4U"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Task List" id="nl0-q1-aFI">
+                    <navigationItem key="navigationItem" title="TaskFire" id="nl0-q1-aFI">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Ipt-p4-izF">
                             <connections>
                                 <segue destination="AFg-h0-cJV" kind="show" identifier="addTaskDetailSegue" id="HrL-7Q-aWR"/>

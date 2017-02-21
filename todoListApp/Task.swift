@@ -1,10 +1,22 @@
-//
-//  Task.swift
-//  todoListApp
-//
-//  Created by Lawrence Martin on 2017-01-31.
-//  Copyright © 2017 mapd.centennial. All rights reserved.
-//
+/*:
+ 
+ - File Name:
+ Task.swift
+ 
+ - Author:
+ Lawrence Martin
+ 
+ - App Name:
+ TaskFire
+ 
+ - Student ID:
+ 300782358
+ 
+ - File Description:
+ Task model
+ 
+ */
+
 
 import Foundation
 import FirebaseDatabase
@@ -46,14 +58,13 @@ class Task: NSObject {
         }
     }
     
-    
+    ///Convert all fields to string for easy storage in Firebase
     func toDictionary() -> [String:String] {
-        
-        
         
         return ["name":name!, "note":note!, "completed":BoolToString(b: completed)]
     }
     
+    ///Convert a boolean value to string
     func BoolToString(b: Bool?)->String { return b?.description ?? "<None>"}
 
 }
