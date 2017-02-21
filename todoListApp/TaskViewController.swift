@@ -26,11 +26,10 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         dbRef = FIRDatabase.database().reference().child("tasks-data")
         self.startObservingDB()
         
-        //        Added some patients manually
-        //        //create dbref with patientID as key
+        //        Added some tasks manually
         //        let taskRef = self.dbRef.childByAutoId()
         //
-        //        //set patient data in firebase
+        //        //set task data in firebase
         //        taskRef.setValue(task3.toDictionary())
     }
     
@@ -108,7 +107,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         var selectedTask:Task
 
         
-        if segue.identifier == "taskDetailSegue" {
+        if segue.identifier == "editTaskDetailSegue" {
             let taskDetail =  segue.destination as! TaskDetailViewController
       
             // Pass the selected object to the new view controller.
